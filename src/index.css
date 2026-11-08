@@ -1,0 +1,96 @@
+:root {
+  --header-bg: #2b3e50;
+  --accent-blue: #3498db;
+  --body-bg-light: #edf2f7;
+  --card-bg-light: #ffffff;
+}
+
+[data-bs-theme="dark"], .dark {
+  --header-bg: #1e293b;
+  --accent-blue: #38bdf8;
+  --body-bg-light: #0f172a;
+  --card-bg-light: #1e293b;
+}
+
+body {
+  background-color: var(--body-bg-light) !important;
+  color: #2d3748;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+[data-bs-theme="dark"] body, .dark body {
+  color: #e2e8f0;
+}
+
+.header-profile {
+  background-color: var(--header-bg);
+  color: #ffffff;
+  padding: 2.5rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%; /* Cambiado a circular para la foto de perfil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-correo-oscuro {
+  background-color: #1a252f;
+  border: 1px solid #34495e;
+  color: #ffffff !important;
+}
+
+.btn-correo-oscuro:hover {
+  background-color: #151d24;
+  color: #ffffff !important;
+}
+
+.card-custom {
+  background-color: var(--card-bg-light) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+[data-bs-theme="dark"] .card-custom, .dark .card-custom {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2c3e50;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+[data-bs-theme="dark"] .section-title, .dark .section-title {
+  color: #f8fafc;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+[data-bs-theme="dark"] .form-label, .dark .form-label {
+  color: #cbd5e1;
+}
+
+.custom-hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.9rem 0;
+}
+
+[data-bs-theme="dark"] .custom-hr, .dark .custom-hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
