@@ -3,19 +3,21 @@ import './index.css';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Perfil } from './components/Perfil';
+import { Curriculum } from './components/Curriculum';
 
 function App() {
   const [activeTab, setActiveTab] = useState('cv');
 
   return (
-    // Agregamos bg-dark y text-white para ver todo el contenido
-    <div className="bg-dark text-white min-vh-100 d-flex flex-column justify-content-between">
+    <div className="d-flex flex-column min-vh-100">
       <Navbar activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab)} />
 
-      <main className="container my-4">
-        <Perfil />
-      </main>
+      <main className="container my-4 flex-grow-1">
+        <Perfil onNavigateToContact={() => setActiveTab('contacto')} />
 
+        {activeTab === 'cv' && <Curriculum />}
+        {activeTab === 'contacto' && <h2>Formulario de Contacto (Próximamente)</h2>}
+      </main>
       <Footer />
     </div>
   );

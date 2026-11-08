@@ -64,7 +64,7 @@ export const Perfil = ({ onNavigateToContact }) => {
                     onClick={onNavigateToContact}
                     className="btn btn-sm btn-outline-light rounded-pill px-3 shadow-sm"
                   >
-                    Formulario ✉️
+                    Contacto
                   </button>
                   <span className="text-white-50">|</span>
                 </>
