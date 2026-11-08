@@ -9,6 +9,7 @@ export const Perfil = ({ onNavigateToContact }) => {
       <div className="container">
         <div className="row align-items-center">
           
+          {/* Avatar / Foto */}
           <div className="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
             {!imgError ? (
               <img
@@ -36,16 +37,13 @@ export const Perfil = ({ onNavigateToContact }) => {
 
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
               <span className="text-white-50">|</span>
-              
               <a
-                href="mailto:an.abarcab@duocuc.cl"
-                className="btn btn-sm btn-correo-oscuro fw-bold px-3 rounded-pill shadow-sm"
+                href="mailto:tu-correo@ejemplo.com"
+                className="btn btn-sm btn-outline-light fw-bold px-3 rounded-pill shadow-sm"
               >
                 Correo
               </a>
-
               <span className="text-white-50">|</span>
-
               <a
                 href="https://github.com/AntoAbarca"
                 target="_blank"
@@ -54,9 +52,7 @@ export const Perfil = ({ onNavigateToContact }) => {
               >
                 GitHub
               </a>
-
               <span className="text-white-50">|</span>
-
               {onNavigateToContact && (
                 <>
                   <button
@@ -64,7 +60,7 @@ export const Perfil = ({ onNavigateToContact }) => {
                     onClick={onNavigateToContact}
                     className="btn btn-sm btn-outline-light rounded-pill px-3 shadow-sm"
                   >
-                    Contacto
+                    Contacto 
                   </button>
                   <span className="text-white-50">|</span>
                 </>

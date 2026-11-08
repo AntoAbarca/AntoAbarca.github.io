@@ -1,121 +1,86 @@
-:root {
-  --header-bg: #2b3e50;
+/* Variables para Modo Claro */
+:root, [data-bs-theme="light"] {
+  --body-bg: #edf2f7;
+  --card-bg: #ffffff;
+  --text-main: #1a202c;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --header-bg: #212d3a;
   --accent-blue: #3498db;
-  --body-bg-light: #edf2f7;
-  --card-bg-light: #ffffff;
 }
 
+/* Variables para Modo Oscuro */
 [data-bs-theme="dark"], .dark {
-  --header-bg: #1e293b;
+  --body-bg: #12181f;
+  --card-bg: #1a232e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --header-bg: #182028;
   --accent-blue: #38bdf8;
-  --body-bg-light: #0f172a;
-  --card-bg-light: #1e293b;
 }
 
-body {
-  background-color: var(--body-bg-light) !important;
-  color: #2d3748;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+/* Estilos Generales de la Página */
+html, body {
+  background-color: var(--body-bg) !important;
+  color: var(--text-main) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-[data-bs-theme="dark"] body, .dark body {
-  color: #e2e8f0;
-}
-
+/* Header del Perfil */
 .header-profile {
   background-color: var(--header-bg);
   color: #ffffff;
   padding: 2.5rem 0;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%; /* Cambiado a circular para la foto de perfil */
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.btn-correo-oscuro {
-  background-color: #1a252f;
-  border: 1px solid #34495e;
-  color: #ffffff !important;
+/* Foto de Perfil (Recupera tamaño y forma circular) */
+.profile-img {
+  width: 140px !important;
+  height: 140px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.btn-correo-oscuro:hover {
-  background-color: #151d24;
-  color: #ffffff !important;
-}
-
+/* Tarjetas */
 .card-custom {
-  background-color: var(--card-bg-light) !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  border-radius: 10px !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  margin-bottom: 1.5rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-[data-bs-theme="dark"] .card-custom, .dark .card-custom {
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.section-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #2c3e50;
-  border-bottom: 2px solid var(--accent-blue);
-  padding-bottom: 0.35rem;
-  margin-bottom: 1rem;
-}
-
-[data-bs-theme="dark"] .section-title, .dark .section-title {
-  color: #f8fafc;
-}
-
-.form-label {
-  font-size: 0.875rem;
-  color: #334155;
-}
-
-[data-bs-theme="dark"] .form-label, .dark .form-label {
-  color: #cbd5e1;
-}
-
-.custom-hr {
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0.9rem 0;
-}
-
-[data-bs-theme="dark"] .custom-hr, .dark .custom-hr {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Estilo base de la tarjeta */
-.card-custom {
-  background-color: var(--card-bg-light) !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background-color: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 12px !important;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .card-custom:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important; 
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Título de cada sección con la línea azul */
+/* Títulos con Línea Azul */
 .section-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  border-bottom: 2.5px solid var(--accent-blue, #3498db);
+  color: var(--text-main);
+  border-bottom: 2.5px solid var(--accent-blue);
   padding-bottom: 0.4rem;
   margin-bottom: 1.2rem;
+}
+
+/* Línea divisoria */
+.custom-hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1rem 0;
 }
