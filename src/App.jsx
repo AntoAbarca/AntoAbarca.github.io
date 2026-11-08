@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Perfil } from './components/Perfil';
 import { Curriculum } from './components/Curriculum';
+import { Contacto } from './components/Contacto';
 
 function App() {
   const [activeTab, setActiveTab] = useState('cv');
@@ -16,7 +17,7 @@ function App() {
         <Perfil onNavigateToContact={() => setActiveTab('contacto')} />
 
         {activeTab === 'cv' && <Curriculum />}
-        {activeTab === 'contacto' && <h2>Formulario de Contacto (Próximamente)</h2>}
+        {activeTab === 'contacto' && <Contacto />}
       </main>
       <Footer />
     </div>
